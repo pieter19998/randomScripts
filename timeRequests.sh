@@ -11,3 +11,4 @@ for ((i = 0 ; i < $ping; i++)); do
 done
 
 echo "total time: ${total}"
+echo "average roundtrip time: $((total / ping))"
