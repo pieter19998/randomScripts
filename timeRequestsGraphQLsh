@@ -6,7 +6,7 @@ vared -p 'enter a query example(person(id: 1){name}): ' -c query
 total=0
 
 for ((i = 0 ; i < $ping; i++)); do
-	time=$(curl -w "%{time_total}" -X POST -H "Content-Type: application/json" --data '{ "query": "{$query}" }' -o /dev/null $address)
+	time=$(curl -w "%{time_total}" -X POST -H "Content-Type: application/json" --data '{ "query": "{$query}" }' -o /dev/null -s $address)
 	echo "request time:  ${time}"
 	((total=total+time)) 
 done
